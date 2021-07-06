@@ -19,9 +19,9 @@ def contact(request):
 def new_colab(request):
     if request.method =='POST':
         colab_new=ColabForm(request.POST, request.FILES)
-        contrapre=request.POST['rut'][:2]+request.POST['nombre'][:2].upper()+request.POST['pais'][:2]+request.POST['telefono'][-2:]
+        clave=request.POST['rut'][:2]+request.POST['nombre'][:2].upper()+request.POST['pais'][:2]+request.POST['telefono'][-2:]
         colab_new.data=colab_new.data.copy()
-        colab_new.data['contrasena']=contrapre
+        colab_new.data['contrasena']=clave
         if colab_new.is_valid():
             colab_new.save()
             return redirect('colaboradores')
