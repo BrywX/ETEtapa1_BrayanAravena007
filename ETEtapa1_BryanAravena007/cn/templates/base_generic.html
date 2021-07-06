@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'js/jquery.scrollUp.js'%}"></script>
+<link href="{% static 'css/bootstrap.css'%}" rel='stylesheet' type='text/css'/>
+<link href="{% static 'css/style.css'%}" rel='stylesheet' type='text/css'/>
+
+<script>
+    $(function(){
+  $.scrollUp({
+    scrollImg: false,
+  });
+});
+</script>
+
+</head>
+<body>
+    <!--Cabecera -->
+    <div class="header">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="logo">
+						<a href="{% url 'index'%}"><img class="imglogo" src="{% static 'img/cnn.jpg'%}"/></a>
+					 </div>
+					 <div class="menu">
+						  <a class="toggleMenu" href="#"><img src="{% static 'img/nav.png'%}" alt="" /></a>
+						    <ul class="nav" id="nav">
+						    	<li><a href="{% url 'index'%}">Home</a></li>
+                                <li><a href="{% url 'colaboradores'%}">Colaboradores</a></li>
+								<li><a href="{% url 'contact'%}">Contactanos</a></li>
+                                <a class="ausers" href="#"><img class="users" src="{% static 'img/user.png'%}"></a>
+								<div class="clear"></div>
+                                <script type="text/javascript" src="{% static 'js/responsive-nav.js'%}"></script>
+                            </ul>
+				    </div>								
+	    		    <div class="clear"></div>
+	    	    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+
+{% block content %}
+
+{% endblock %}
+<!--Footer-->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="footer_box">
+                    <h4>Sobre Nosotros</h4>
+                    <li><a href="#">¿Que es Caos News?</a></li>
+                    <li><a href="#">Nuestro equipo</a></li>
+                    <li><a href="#">Contactanos</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="footer_box">
+                    <h4>Nuestros Colaboradores</h4>
+                    <li><a href="#">Brayan Aravena</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="footer_box">
+                    <h4>Seleccion Editoral</h4>
+                    <li><a href="#">Noticias pais</a></li>
+                    <li><a href="#">Noticias Internacionales</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="footer_box">
+                    <h4>Newsletter</h4>
+                    <div class="footer_search">
+                        <form>
+                        <input type="text" value="Ingresa tu email">
+                        <input type="submit" value="GO">
+                        </form>
+                    </div>
+                    <ul class="social">	
+                        <li class="facebook"><a href="#"><span> </span></a></li>
+                        <li class="twitter"><a href="#"><span> </span></a></li>
+                        <li class="instagram"><a href="#"><span> </span></a></li>		
+                        <li class="youtube"><a href="#"><span> </span></a></li>										  				
+                    </ul>
+                        
+                </ul>
+            </div>
+        </div>
+        <div class="row footer_bottom">
+            <div class="copy">
+                <p>© 2021 Caos News | All Rights Reserved <a href="#"></a></p>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+</html>

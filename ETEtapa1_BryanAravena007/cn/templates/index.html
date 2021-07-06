@@ -1,0 +1,101 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Caos News | Index</title>
+<meta charset="UTF-8">
+{% load static %}
+<style>
+	.carousel-inner img {
+	width: 100%;
+	}
+</style>
+<style type="text/css">
+	body{
+	 top: 0 !important;
+	}
+	  .goog-te-banner-frame{
+		  display: none;
+	  }
+ </style>
+<script type="text/javascript">
+	function googleTranslateElementInit(){
+		new google.translate.TranslateElement
+		({pageLanguage: 'es' , layout: google.translate.TranslateElement.InlineLayout.SIMPLE}
+		, 'google_translate_element');
+	}
+ </script>
+
+
+</head>
+<body>
+<!--Carrusel-->
+<div id="carrufig" class="carousel slide" data-ride="carousel">
+
+	<ul class="carousel-indicators">
+	  <li data-target="#carrufig" data-slide-to="0" class="active"></li>
+	  <li data-target="#carrufig" data-slide-to="1"></li>
+	  <li data-target="#carrufig" data-slide-to="2"></li>
+	  <li data-target="#carrufig" data-slide-to="3"></li>
+	</ul>
+	<!--Dentro del carrusel-->
+	<div class="carousel-inner">
+	<div class="carousel-caption">
+		<h1 class="titulo">Caos</h1>
+		<h1 class="titulo">News</h1>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+	<div class="carousel-item active">
+		<img src="{% static 'img/fp1.jpg'%}" alt="" height="700">
+	</div>
+	<div class="carousel-item">
+		<img src="{% static 'img/fp2.jpg'%}" alt="" height="700">
+	</div>
+	<div class="carousel-item">
+		<img src="{% static 'img/fp3.jpg'%}" alt="" height="700">
+	</div>
+	<!-- Control carrusel -->
+	<a class="carousel-control-prev" href="#carrufig" data-slide="prev">
+	  <span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#carrufig" data-slide="next">
+	  <span class="carousel-control-next-icon"></span>
+	</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+	<h1 style="text-align: center;">Bienvenidos a Caos News</h1>
+	<br>
+	<h4 style="text-align: center;"><strong>PARA EMPÉZAR ¿QUÉ ES CAOS NEWS?
+		UN DIARIO WEB, UN MEDIO DE COMUNICACIÓN ÚNICO Y TOTALMENTE INDEPENDIENTE</strong></h4>
+	<br>
+	<p style="text-align: justify">Nuestra misión principal es informar a nuestros lectoras y lectores sobre los principales hechos que ocurren en nuestro pais, abrir un espacio para la opinión y usar nuestro alcance mediático para servir a la comunidad. Nuestra visión es la de ser un referente que crea opinión pública local, desarrollando en los ciudadanos identidad y pertenencia en la comunidad.
+		No somos un medio de comunicación 100% objetivo, pues es imposible que al escribir nos desprendamos totalmente de nuestra propia historia personal y visión de mundo. Sí buscamos la veracidad en nuestros contenidos y  pare eso verificamos nuestras fuentes y nos hacemos responsables de lo que escribimos.</p>
+	<br><p style="text-align: justify">Esperando que este medio de comunicacion indepentiende se caracterize de entre otros, invitamos a todos a formar parte de nuestro equipo de colaboradores y que nos ayuden a difundir informacion en ayuda a la comunidad :).</p>
+	<br>
+	<p><strong>¡Gracias!:D</strong></p>
+	<br>
+<br>
+<br>
+<br>
+</div>
+</div>
+	</div>
+</div>
+</div>
+</body>
+</html>		
+{% endblock %}
+	
+			

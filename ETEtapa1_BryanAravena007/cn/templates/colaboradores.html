@@ -1,0 +1,102 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Caos News | Colaboradores</title>
+<meta charset="UTF-8">
+{% load static %}
+
+
+</head>
+<body>
+<!--Productos-->
+<div class="main">
+	<div class="content-top">
+	<h2>Nuestros Colaboradores</h2><br>
+	<h2>          x</h2>
+	<div class="container">
+		<li class="boton1 cart"><a href="{% url 'new_colab' %}">Agregar Colaborador +</a></li>
+		<div class="close_but"><i class="close1"> </i></div>
+		</div>
+
+	<!--Colaboradores-->
+	<div class="main">
+		<div class="shop_top">
+			<div class="container">
+				<div class="row shop_box-top">
+					<div class="col-md-12 shop_box"><a href="#">
+						<center><img src="{% static 'img/p1.png'%}"  class="img-responsive"  alt=""/></center>
+						<div class="shop_desc">
+							<h3><a href="#">Nombre: Pedro Aravena</a></h3>
+							<p>Rut: 19.853.142-5</p>
+							<p>Pais: Chile</p>
+							<p>Region: Metropolitana</p>
+							<p>Direccion: Las torres #642</p>
+							<p>Telefono: 979648951</p>
+							<p>Email: pedro.aravena1@gmail.com</p>
+							<h4 style="text-align: center">
+							</h4>
+							<ul class="buttons">
+								<br>
+								<li class="boton1 cart"><a href="#">Ver Más</a></li>
+								<div class="clear"> </div>
+							</ul>
+						</div>
+						<br>
+						<br>
+						<br>
+						{%for co in colaboradores%}
+					<div class="col-md-12 shop_box"><a href="#">
+						<center><img src="{{co.imagen.url}}"  class="img-responsive"  alt=""/></center>
+						<div class="shop_desc">
+							<h3><a href="#">Nombre: {{co.nombre}}</a></h3>
+							<p>Rut: {{co.rut}} </p>
+							<p>Pais: {{co.pais}} </p>
+							<p>Region: {{co.region}} </p>
+							<p>Direccion: {{co.direccion}} </p>
+							<p>Telefono: {{co.telefono}} </p>
+							<p>Email: {{co.email}} </p>
+							<h4 style="text-align: center">
+							</h4>
+							<ul class="buttons">
+								<li class="boton1 cart"><a href="#">Ver Más</a></li>
+								<div class="clear"></div>
+							</ul>
+							<div class="row justify-content-around">
+								<ul class="buttons">
+									<li class="boton1 cart">
+										<a href="{% url 'mod_colab' co.rut %}">Modificar</a>
+									</li>
+								</ul>
+								<ul class="buttons">
+									<li class="boton1 cart">
+										<a href="{% url 'del_colab' co.rut %}">Eliminar</a>
+									</li>
+								</ul>
+							</div>
+						<br>
+						</div>
+					</a></div>	
+					{%endfor%}
+					</a></div>
+							</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							</div>
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+</div>
+</div>
+</body>
+</html>			
+{% endblock %}				

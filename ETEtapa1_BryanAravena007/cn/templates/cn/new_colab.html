@@ -1,0 +1,171 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Caos News | Agregar Colaborador</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+    src="https://rawcdn.githack.com/franz1628/validacionKeyCampo/bce0e442ee71a4cf8e5954c27b44bc88ff0a8eeb/validCampoFranz.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+{% load static %}
+
+<script>
+    function CambiarMayusculas() {
+        var a = document.getElementById("nombre");
+        var b = document.getElementById("pais");
+        a.value = a.value.toUpperCase();
+        b.value = b.value.toUpperCase();
+    }
+
+    function CambiaColor(a) {
+        a.style.background = "orange";
+    }
+
+    $(function () {
+        $("#validaciones").validate({
+            rules: {
+                rut: {
+                    required: true,
+                },
+
+                nombre: {
+                    required: true,
+                },
+
+                pais: {
+                    required: true,
+                },
+
+                region: {
+                    required: true,
+                },
+
+                direccion: {
+                    required: true,
+                },
+
+                telefono: {
+                    required: true
+                },
+
+
+            },
+            messages: {
+                rut: {
+                    required: 'Ingrese rut*',
+                },
+
+                nombre: {
+                    required: 'Ingrese nombre*',
+                },
+
+
+                pais: {
+                    required: 'Ingrese pais*',
+
+                },
+
+                region: {
+                    required: 'Ingrese region*',
+                },
+
+                direccion: {
+                    required: 'Ingrese direccion*',
+                },
+
+                telefono: {
+                    required: "Ingrese telefono*"
+                },
+
+                imagen: {
+                    required: "Falta adjuntar Imagen*"
+                },
+
+            }
+        });
+
+        $('#nombre').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúö');
+        $('#pais').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúö');
+        $('#region').validCampoFranz(' abcdefghijklmnñopqrstuvwxyzáéíóúö');
+    });
+
+</script>
+
+</head>
+
+<body>
+    <!--Registro Producto-->
+    <div class="main">
+        <div class="shop_top">
+            <div class="container content">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="register-top-grid">
+                        <hr>
+                        <center><h2>NUEVO COLABORADOR</h2></center>
+                        <br>
+                        <!-- {{producto_new.as_p}} -->
+                        <div class="col-ml-6">
+                            <b>{{colab_new.rut.label}}</b>
+                            {{colab_new.rut}}
+                        </div>
+                        <div class="col-ml-6">
+                            <b>{{colab_new.nombre.label}}</b>
+                            {{colab_new.nombre}}
+                        </div>
+                        <br><br>
+                        <div class="col-ml-6">
+                            <b>{{colab_new.pais.label}}</b>
+                            {{colab_new.pais}}
+                        </div>
+                        <div class="col-ml-6">
+                            <b>{{colab_new.region.label}}</b>
+                            {{colab_new.region}}
+                        </div>
+                        <div class="col-ml-6">
+                            <b>{{colab_new.direccion.label}}</b>
+                            {{colab_new.direccion}}
+                        </div>
+                        <div class="col-ml-6">
+                            <b>{{colab_new.telefono.label}}</b>
+                            {{colab_new.telefono}}
+                        </div>
+                        <div class="col-ml-6">
+                            <b>{{colab_new.email.label}}</b>
+                            {{colab_new.email}}
+                        </div>
+                        <div class="col-ml-6">
+                            <b></b>
+                            {{colab_new.contrasena}}
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <b><center>{{colab_new.imagen.label}}</center></b>
+                            {{colab_new.imagen}}
+
+                        <br><br>
+                    <div class="clear">
+                        <br>
+                        <div class="clear"></div>
+                        <div class="col-ml-6">
+                            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">   
+                            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                        </div>
+                    </div>
+                    <hr>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}

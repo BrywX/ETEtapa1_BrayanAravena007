@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Caos News | Modificar Colaborador</title>
+</head>
+<body>
+    <div class="main">
+        <div class="content-top">
+        <h3>Modificar Colaborador</h3>
+        <h3>          x</h3>
+        <hr>
+        <div class="close_but"><i class="close1"> </i></div>
+    <div class="main">
+        <div class="shop_top">
+            <div class="container content">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="register-top-grid">
+                        {{form.as_table}}
+                        <br><br>
+                    <div class="clear">
+                        <br>
+                        <div class="clear"></div>
+                        <div class="col-ml-6">
+                            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                        </div>
+                    </div>
+                    <hr>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}
